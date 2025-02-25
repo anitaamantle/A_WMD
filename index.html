@@ -8,7 +8,73 @@
         font-family: Arial, sans-serif;
         background: linear-gradient(to right, grey, navy, black);
         color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .sidebar {
+        width: 200px;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+      .sidebar a {
+        display: block;
+        color: white;
+        padding: 10px;
+        text-decoration: none;
+      }
+      .sidebar a:hover {
+        background: grey;
+      }
+      .topnav {
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 15px;
         text-align: center;
+        position: fixed;
+        top: 0;
+        left: 200px;
+      }
+      .topnav a {
+        color: white;
+        margin: 0 15px;
+        text-decoration: none;
+        font-size: 1.2em;
+      }
+      .topnav a:hover {
+        text-decoration: underline;
+      }
+      .content {
+        margin-left: 220px;
+        margin-top: 60px;
+        padding: 20px;
+        width: calc(100% - 220px);
+      }
+      .article {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 30px;
+        border-radius: 10px;
+        margin: 30px auto;
+        width: 70%;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+      .footer {
+        background: rgba(0, 0, 0, 0.8);
+        padding: 15px;
+        text-align: center;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+      }
+      .footer p {
+        margin: 0;
+        color: white;
       }
       h1, h2 {
         color: #f0f0f0;
@@ -17,9 +83,6 @@
         width: 60%;
         margin: 10px auto;
         line-height: 1.6;
-      }
-      .container {
-        padding: 50px;
       }
       .card {
         background: rgba(255, 255, 255, 0.1);
@@ -39,8 +102,24 @@
     </style>
   </head>
   <body>
-    <h1>Welcome to Gearhead Collective!</h1>
-    <div class="container">
+    <div class="sidebar">
+      <a href="#">Home</a>
+      <a href="#">More Info</a>
+      <a href="#">News</a>
+      <a href="#">New Arrivals</a>
+    </div>
+    <div class="topnav">
+      <a href="#">Home</a>
+      <a href="#">More Info</a>
+      <a href="#">News</a>
+      <a href="#">New Arrivals</a>
+    </div>
+    <div class="content">
+      <h1>Welcome to Gearhead Collective!</h1>
+      <div class="article">
+        <h2>Featured Article</h2>
+        <p>Explore the latest trends in the car world, from modifications to classic restorations.</p>
+      </div>
       <div class="card">
         <p>Where we car enthusiasts connect together to create a family of car collectives!</p>
         <p>
@@ -56,17 +135,11 @@
         <p>🚗 <strong>Next Meet:</strong> 15 February 2025</p>
         <p>📍 <strong>Location:</strong> Oodi Offroad Extreme</p>
       </div>
-      <h2>🛠️ Need Help with Your Car?</h2>
-      <div class="card">
-        <p>Got a car issue? Our community is here to help!</p>
-        <p>💬 Want to chat? Join the discussion and stay updated!</p>
-        <p>Sign up now and never miss a meet! See you on the road! 🚘🔥</p>
-      </div>
-      <h2>🔗 Join Us:</h2>
-      <p>
-        <a href="revvedup_int.html" target="_blank">Check out our GitHub page!</a>
-      </p>
+    </div>
+    <div class="footer">
+      <p>📞 Contact Us: info@gearheadcollective.com | 📍 Location: 123 Car Street, Auto City</p>
     </div>
   </body>
 </html>
+
 
