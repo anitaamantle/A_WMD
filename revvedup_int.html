@@ -1,38 +1,150 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>RevvedUp!</title>
-  </head>
-  <body>
-    <h1>Welcome to RevvedUp GTI – The Ultimate Volkswagen GTI Convoy Crew!</h1>
-    <p>🚗 Powered by RevvedUp, Dedicated to GTI Enthusiasts! 🚗</p>
-
-    <p>
-      If you live for the thrill of turbocharged power, precision handling, and the generational 
-      legacy of the Volkswagen GTI, you've found your people! RevvedUp GTI is a dedicated space 
-      within GearHead Collective where GTI owners and enthusiasts connect, share modifications, 
-      and discuss car performance.
-    </p>
-
-    <h2>🔥 What We Offer:</h2>
-    <ul>
-      <li>🚘 <strong>GTI-Exclusive Meets & Cruises</strong> – Join our club-specific meetups, track days, and spirited drives.</li>
-      <li>🚘 <strong>Tech & Tuning Discussions</strong> – Share knowledge on performance upgrades, troubleshooting, and custom builds.</li>
-      <li>🚘 <strong>Community & Camaraderie</strong> – Whether you're stocked, bagged, tuned, or fully built, you belong here!</li>
-    </ul>
-
-    <h2>📅 Next GTI Meet:</h2>
-    <p><strong>Date:</strong> 22 Feb 2025</p>
-    <p><strong>Location:</strong> Molepolole Stadium</p>
-
-    <p>
-      Join RevvedUp GTI today and be part of the most passionate GTI squad around. 
-      Sign up now and let's hit the road. <strong>VRRRRR PHAAAAA!!!</strong> 🚀💨
-    </p>
-
-    <h2>Gallery:</h2>
-    <img src="https://i.pinimg.com/474x/af/ea/81/afea81b5f61f8b11532b7918f9514410.jpg" alt="GTI Image 1">
-    <img src="https://i.pinimg.com/474x/6b/2a/8e/6b2a8e972d13929d614c5aa6a9baaf7b.jpg" alt="GTI Image 2">
-  </body>
+<head>
+    <title>RevvedUp GTI</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, black, grey, grey, black);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .sidebar {
+            width: 200px;
+            height: 100vh;
+            background: rgba(20, 20, 20, 0.9);
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            text-align: center;
+            width: 100%;
+            border-radius: 5px;
+        }
+        .sidebar a:hover {
+            background: grey;
+        }
+        .topnav {
+            width: calc(100% - 200px);
+            background: rgba(30, 30, 30, 0.9);
+            padding: 15px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 200px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .topnav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+        .topnav a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            margin-left: 220px;
+            margin-top: 70px;
+            padding: 20px;
+            width: calc(100% - 220px);
+        }
+        .article {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 80%;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            justify-items: center;
+        }
+        .grid-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            text-align: center;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <a href="#">Home</a>
+        <a href="#">GTI Mods</a>
+        <a href="#">Performance Upgrades</a>
+        <a href="#">Gallery</a>
+        <a href="#">Community</a>
+    </div>
+    <div class="topnav">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Latest Builds</a>
+        <a href="#">Contact</a>
+    </div>
+    <div class="content">
+        <div class="article">
+            <h1>Welcome to RevvedUp GTI – The Ultimate Volkswagen GTI Convoy Crew!</h1>
+            <p>🚗 Powered by RevvedUp, Dedicated to GTI Enthusiasts! 🚗</p>
+            <p>If you live for the thrill of turbocharged power, precision handling, and the generational 
+            legacy of the Volkswagen GTI, you've found your people! RevvedUp GTI is a dedicated space 
+            within GearHead Collective where GTI owners and enthusiasts connect, share modifications, 
+            and discuss car performance.</p>
+        </div>
+        <div class="grid">
+            <div class="grid-item">🔥 GTI-Exclusive Meets</div>
+            <div class="grid-item">⚙️ Tech & Tuning</div>
+            <div class="grid-item">🏁 Community & Camaraderie</div>
+        </div>
+        <div class="article">
+            <h2>📅 Next GTI Meet:</h2>
+            <p><strong>Date:</strong> 22 Feb 2025</p>
+            <p><strong>Location:</strong> Molepolole Stadium</p>
+            <p>Join RevvedUp GTI today and be part of the most passionate GTI squad around. 
+            Sign up now and let's hit the road. <strong>VRRRRR PHAAAAA!!!</strong> 🚀💨</p>
+        </div>
+        <h2>Gallery:</h2>
+        <img src="https://i.pinimg.com/474x/af/ea/81/afea81b5f61f8b11532b7918f9514410.jpg" alt="GTI Image 1">
+        <img src="https://i.pinimg.com/474x/6b/2a/8e/6b2a8e972d13929d614c5aa6a9baaf7b.jpg" alt="GTI Image 2">
+    </div>
+    <div class="footer">
+        <p>&copy; 2025 RevvedUp GTI. All rights reserved.</p>
+    </div>
+</body>
 </html>
+
 
