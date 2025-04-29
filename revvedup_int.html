@@ -1,18 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RevvedUp GTI</title>
     <style>
+        
         body {
             margin: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(to right, black, grey, grey, black);
             color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
+            background: #000;
         }
+    
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            z-index: -1;
+        }
+        
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            z-index: 1;
+        }
+
+        .video-text {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #00bcd4;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
         .sidebar {
             width: 200px;
             height: 100vh;
@@ -25,6 +57,7 @@
             flex-direction: column;
             align-items: center;
         }
+
         .sidebar a {
             display: block;
             color: white;
@@ -34,9 +67,11 @@
             width: 100%;
             border-radius: 5px;
         }
+
         .sidebar a:hover {
             background: grey;
         }
+
         .topnav {
             width: calc(100% - 200px);
             background: rgba(30, 30, 30, 0.9);
@@ -49,20 +84,25 @@
             justify-content: center;
             gap: 20px;
         }
+
         .topnav a {
             color: white;
             text-decoration: none;
             font-size: 1.2em;
         }
+
         .topnav a:hover {
             text-decoration: underline;
         }
+
+        
         .content {
             margin-left: 220px;
             margin-top: 70px;
             padding: 20px;
             width: calc(100% - 220px);
         }
+
         .article {
             background: rgba(255, 255, 255, 0.1);
             padding: 30px;
@@ -72,25 +112,28 @@
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            justify-items: center;
+
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: 30px auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
-        .grid-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            width: 200px;
-            height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 400px;
         }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
         .footer {
             background: rgba(0, 0, 0, 0.8);
             padding: 15px;
@@ -100,9 +143,62 @@
             bottom: 0;
             left: 0;
         }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            background-color: rgba(0,0,0,0.5);
+            border: none;
+            border-radius: 3px;
+        }
+
+        .next {
+            right: 0;
+        }
+
+        .dots {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            background-color: #777;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .active, .dot:hover {
+            background-color: #fff;
+        }
+
     </style>
 </head>
 <body>
+
+    <video class="video-background" autoplay loop muted>
+        <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <div class="video-overlay"></div>
+    
+    <div class="video-text">
+        <h1>RevvedUp GTI – Turbocharged Passion</h1>
+        <p>Join the ultimate GTI community. Share mods, tips, and turbocharged excitement!</p>
+    </div>
+
+    <!-- Sidebar -->
     <div class="sidebar">
         <a href="#">Home</a>
         <a href="#">GTI Mods</a>
@@ -110,43 +206,89 @@
         <a href="#">Gallery</a>
         <a href="#">Community</a>
     </div>
+
+    <!-- Top Navigation -->
     <div class="topnav">
         <a href="#">Home</a>
         <a href="#">About Us</a>
         <a href="#">Latest Builds</a>
         <a href="#">Contact</a>
     </div>
+
+    <!-- Main Content -->
     <div class="content">
         <div class="article">
-            <h1>Welcome to RevvedUp GTI – The Ultimate Volkswagen GTI Convoy Crew!</h1>
-            <p>🚗 Powered by RevvedUp, Dedicated to GTI Enthusiasts! 🚗</p>
-            <p>If you live for the thrill of turbocharged power, precision handling, and the generational 
-            legacy of the Volkswagen GTI, you've found your people! RevvedUp GTI is a dedicated space 
-            within GearHead Collective where GTI owners and enthusiasts connect, share modifications, 
-            and discuss car performance.</p>
+            <h1>Welcome to RevvedUp GTI!</h1>
+            <p>RevvedUp GTI is the ultimate hub for enthusiasts who share a passion for Volkswagen GTI vehicles. Join us as we dive into mods, performance upgrades, and the GTI lifestyle!</p>
         </div>
-        <div class="grid">
-            <div class="grid-item">🔥 GTI-Exclusive Meets</div>
-            <div class="grid-item">⚙️ Tech & Tuning</div>
-            <div class="grid-item">🏁 Community & Camaraderie</div>
+
+        <!-- Slideshow for Cars -->
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="https://via.placeholder.com/1000x500?text=GTI+Car+1" alt="GTI 1">
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/1000x500?text=GTI+Car+2" alt="GTI 2">
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/1000x500?text=GTI+Car+3" alt="GTI 3">
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
         </div>
+
+        <div class="dots">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+
         <div class="article">
-            <h2>📅 Next GTI Meet:</h2>
-            <p><strong>Date:</strong> 22 Feb 2025</p>
-            <p><strong>Location:</strong> Molepolole Stadium</p>
-            <p>Join RevvedUp GTI today and be part of the most passionate GTI squad around. 
-            Sign up now and let's hit the road. <strong>VRRRRR PHAAAAA!!!</strong> 🚀💨</p>
+            <h2>🚗 Reviews from Our Community</h2>
+            <p>"Joining RevvedUp has been an amazing experience! The community is so welcoming, and I’ve learned so much about tuning and modifying my GTI." - John D.</p>
+            <p>"This is THE place for any GTI enthusiast. I’ve made lasting connections and had some incredible experiences!" - Sarah M.</p>
         </div>
-        <h2>Gallery:</h2>
-        <img src="https://i.pinimg.com/474x/af/ea/81/afea81b5f61f8b11532b7918f9514410.jpg" alt="GTI Image 1">
-        <img src="https://i.pinimg.com/474x/6b/2a/8e/6b2a8e972d13929d614c5aa6a9baaf7b.jpg" alt="GTI Image 2">
-        <img src="https://i.pinimg.com/736x/86/99/71/8699715ac4c48613cf77a66907e085aa.jpg" alt="GTI Image 3">
-         <img src="https://i.pinimg.com/736x/54/aa/97/54aa977dd7ac36150608e87339fdbe0a.jpg" alt="GTI Image 4">
     </div>
+
+    <!-- Footer -->
     <div class="footer">
         <p>&copy; 2025 RevvedUp GTI. All rights reserved.</p>
     </div>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName("slide");
+        const dots = document.getElementsByClassName("dot");
+
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+            setTimeout(showSlides, 5000);
+        }
+
+        function plusSlides(n) {
+            slideIndex += n - 1;
+            showSlides();
+        }
+
+        function currentSlide(n) {
+            slideIndex = n - 1;
+            showSlides();
+        }
+
+        showSlides();
+    </script>
+
 </body>
 </html>
+
 
 
