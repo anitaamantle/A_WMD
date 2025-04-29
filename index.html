@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gearhead Collective</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
     /* Reset and base styles */
     * {
@@ -13,7 +14,7 @@
     }
 
     body {
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Orbitron', sans-serif;
       background-color: #0d0d0d;
       color: #f0f0f0;
       line-height: 1.6;
@@ -68,7 +69,7 @@
       margin: 30px auto;
       border-radius: 12px;
       overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
     }
 
     .slide {
@@ -131,7 +132,7 @@
     }
 
     .active, .dot:hover {
-      background-color: #fff;
+      background-color: #00bcd4;
     }
 
     /* Content */
@@ -154,13 +155,36 @@
       background-color: #1f1f1f;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      box-shadow: 0 2px 8px rgba(0,188,212,0.15);
       margin-bottom: 30px;
     }
 
-    .card a {
+    /* Neon Button */
+    .neon-btn {
       display: inline-block;
-      margin-top: 10px;
+      margin: 10px 15px 0 0;
+      padding: 12px 25px;
+      font-weight: bold;
+      font-size: 1rem;
+      color: #00eaff;
+      background: transparent;
+      border: 2px solid #00eaff;
+      border-radius: 30px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 0 8px #00eaff;
+    }
+
+    .neon-btn:hover {
+      background-color: #00eaff;
+      color: #000;
+      box-shadow: 0 0 15px #00eaff, 0 0 30px #00eaff;
+      transform: scale(1.05);
+    }
+
+    .button-group {
+      margin-top: 15px;
     }
 
     /* Footer */
@@ -199,13 +223,13 @@
 
   <div class="slideshow-container">
     <div class="slide fade">
-      <img src="https://via.placeholder.com/1000x500?text=GTI+Stance+Showcase" alt="GTI Stance Showcase">
+      <img src="https://i.pinimg.com/736x/82/6b/a1/826ba110ac1c9e6c20915882b1deafeb.jpg" alt="GTI Stance Showcase">
     </div>
     <div class="slide fade">
-      <img src="https://via.placeholder.com/1000x500?text=Street+Racers+Night" alt="Street Racers Night">
+      <img src="https://i.pinimg.com/736x/82/6b/a1/826ba110ac1c9e6c20915882b1deafeb.jpg" alt="Street Racers Night">
     </div>
     <div class="slide fade">
-      <img src="https://via.placeholder.com/1000x500?text=Offroad+Monsters" alt="Offroad Monsters">
+      <img src="https://i.pinimg.com/736x/06/a2/37/06a237448e7f57aa21c46185ffc29c77.jpg" alt="Offroad Monsters">
     </div>
     <a class="prev" onclick="plusSlides(-1)">❮</a>
     <a class="next" onclick="plusSlides(1)">❯</a>
@@ -239,8 +263,11 @@
         check out amazing rides, and enjoy a great atmosphere.</p>
       <p>🚗 <strong>Next Meet:</strong> 15 February 2025</p>
       <p>📍 <strong>Location:</strong> Oodi Offroad Extreme</p>
-      <a href="revvedup_int.html" target="_blank">Check out our GTI lovers page!</a>
-      <a href="torquetalk.html" target="_blank">Check out our Offroad 4X4 lovers page!</a>
+
+      <div class="button-group">
+        <a href="revvedup_int.html" target="_blank" class="neon-btn">GTI Lovers | Revved Up</a>
+        <a href="torquetalk.html" target="_blank" class="neon-btn">Offroad 4X4 | Torque Talk</a>
+      </div>
     </div>
   </div>
 
@@ -281,6 +308,7 @@
   </script>
 </body>
 </html>
+
 
 
 
