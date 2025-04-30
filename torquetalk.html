@@ -1,147 +1,173 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Torque Talk - 4x4 Community</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, black, darkgray, darkgray, black);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        .sidebar {
-            width: 220px;
-            height: 100vh;
-            background: rgba(20, 20, 20, 0.9);
-            padding: 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .sidebar a {
-            display: block;
-            color: white;
-            padding: 15px;
-            text-decoration: none;
-            text-align: center;
-            width: 100%;
-            border-radius: 5px;
-        }
-        .sidebar a:hover {
-            background: gray;
-        }
-        .topnav {
-            width: calc(100% - 220px);
-            background: rgba(30, 30, 30, 0.9);
-            padding: 15px;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            left: 220px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .topnav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2em;
-        }
-        .topnav a:hover {
-            text-decoration: underline;
-        }
-        .content {
-            margin-left: 240px;
-            margin-top: 70px;
-            padding: 20px;
-            width: calc(100% - 240px);
-        }
-        .article {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 10px;
-            margin: 20px auto;
-            width: 80%;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            justify-items: center;
-        }
-        .grid-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            width: 220px;
-            height: 220px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .footer {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 15px;
-            text-align: center;
-            width: 100%;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Torque Talk - 4x4 Community</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background-color: #0d0d0d;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .sidebar {
+      width: 220px;
+      height: 100vh;
+      background: #1a1a1a;
+      padding: 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-right: 2px solid #00bcd4;
+    }
+
+    .sidebar a {
+      display: block;
+      color: #00bcd4;
+      padding: 15px;
+      text-decoration: none;
+      width: 100%;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .sidebar a:hover {
+      background-color: #333;
+    }
+
+    .topnav {
+      width: calc(100% - 220px);
+      background: #1f1f1f;
+      padding: 15px;
+      position: fixed;
+      top: 0;
+      left: 220px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      border-bottom: 2px solid #00bcd4;
+    }
+
+    .topnav a {
+      color: #00bcd4;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s;
+    }
+
+    .topnav a:hover {
+      text-decoration: underline;
+    }
+
+    .content {
+      margin-left: 240px;
+      margin-top: 90px;
+      padding: 20px;
+      width: calc(100% - 240px);
+    }
+
+    .article {
+      background-color: #1f1f1f;
+      padding: 30px;
+      border-radius: 10px;
+      margin: 20px auto;
+      box-shadow: 0 0 15px rgba(0,188,212,0.2);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .grid-item {
+      background-color: #1f1f1f;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,188,212,0.2);
+    }
+
+    .footer {
+      background: #1a1a1a;
+      padding: 15px;
+      text-align: center;
+      border-top: 2px solid #00bcd4;
+      color: #999;
+      margin-top: 40px;
+      width: 100%;
+    }
+
+    img {
+      width: 250px;
+      height: auto;
+      border-radius: 10px;
+      margin: 10px;
+      box-shadow: 0 0 8px rgba(0, 188, 212, 0.4);
+    }
+  </style>
 </head>
 <body>
-    <div class="sidebar">
-        <a href="#">Home</a>
-        <a href="#">4x4 Models</a>
-        <a href="#">Off-Road Adventures</a>
-        <a href="#">Modifications</a>
-        <a href="#">Community</a>
+  <div class="sidebar">
+    <a href="#">Home</a>
+    <a href="#">4x4 Models</a>
+    <a href="#">Off-Road Adventures</a>
+    <a href="#">Modifications</a>
+    <a href="#">Community</a>
+  </div>
+
+  <div class="topnav">
+    <a href="#">Home</a>
+    <a href="#">About Us</a>
+    <a href="#">Latest Rigs</a>
+    <a href="#">Contact</a>
+  </div>
+
+  <div class="content">
+    <div class="article">
+      <h1>Welcome to Torque Talk - The Ultimate 4x4 Community!</h1>
+      <p>🚙 Built for Adventure, Powered by Passion! 🚙</p>
+      <p>Whether you own a Ford Raptor, Land Cruiser LX V8, Toyota Hilux, Amarok, or any serious off-roading machine, Torque Talk is your hub for discussions, mods, and community events!</p>
     </div>
-    <div class="topnav">
-        <a href="#">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">Latest Rigs</a>
-        <a href="#">Contact</a>
+
+    <div class="grid">
+      <div class="grid-item">🏔️ Off-Roading Guides</div>
+      <div class="grid-item">🔧 Tuning & Mods</div>
+      <div class="grid-item">🏁 Adventure Meets</div>
+      <div class="grid-item">🛠️ 4x4 Builds</div>
     </div>
-    <div class="content">
-        <div class="article">
-            <h1>Welcome to Torque Talk - The Ultimate 4x4 Community!</h1>
-            <p>🚙 Built for Adventure, Powered by Passion! 🚙</p>
-            <p>Whether you own a Ford Raptor, Land Cruiser LX V8, Toyota Hilux, Amarok, or any serious off-roading machine, Torque Talk is your hub for discussions, mods, and community events!</p>
-        </div>
-        <div class="grid">
-           <div class="grid-item">🏔️ Off-Roading Guides</div>
-           <div class="grid-item">🔧 Tuning & Mods</div>
-           <div class="grid-item">🏁 Adventure Meets</div>
-           <div class="grid-item">🛠️ 4x4 Builds</div>
-        </div>
-        <div class="article">
-            <h2>📅 Next Off-Road Meet:</h2>
-            <p><strong>Date:</strong> 10 March 2025</p>
-            <p><strong>Location:</strong> Motokwe Xharo Fest</p>
-            <p>Join Torque Talk today and be part of the most rugged and adventurous 4x4 community. Let's hit the trails together! 🚙💨</p>
-        </div>
-        <h2>Gallery:</h2>
-        <img src="https://i.pinimg.com/736x/d7/43/23/d7432364071e7fb35b089a409b574c97.jpg" alt="lxv8 img 1">
-         <img src="https://i.pinimg.com/736x/da/0c/e3/da0ce31b587454f6c4d5dd6a31fcfbc1.jpg" alt="lxv8 img 2">
-        <img src="https://i.pinimg.com/736x/18/e5/8c/18e58c3d019b53825ab905f21882b356.jpg" alt="ford raptor img 1">
-         <img src="https://i.pinimg.com/736x/f1/4d/8c/f14d8c0c7b8c30dea38224c17eba050a.jpg" alt="amarok img 1">
+
+    <div class="article">
+      <h2>📅 Next Off-Road Meet:</h2>
+      <p><strong>Date:</strong> 10 March 2025</p>
+      <p><strong>Location:</strong> Motokwe Xharo Fest</p>
+      <p>Join Torque Talk today and be part of the most rugged and adventurous 4x4 community. Let's hit the trails together! 🚙💨</p>
     </div>
-    <div class="footer">
-        <p>&copy; 2025 Torque Talk. All rights reserved.</p>
-    </div>
+
+    <h2>Gallery:</h2>
+    <img src="https://i.pinimg.com/736x/d7/43/23/d7432364071e7fb35b089a409b574c97.jpg" alt="lxv8 img 1">
+    <img src="https://i.pinimg.com/736x/da/0c/e3/da0ce31b587454f6c4d5dd6a31fcfbc1.jpg" alt="lxv8 img 2">
+    <img src="https://i.pinimg.com/736x/18/e5/8c/18e58c3d019b53825ab905f21882b356.jpg" alt="ford raptor img 1">
+    <img src="https://i.pinimg.com/736x/f1/4d/8c/f14d8c0c7b8c30dea38224c17eba050a.jpg" alt="amarok img 1">
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2025 Torque Talk. All rights reserved.</p>
+  </div>
 </body>
 </html>
