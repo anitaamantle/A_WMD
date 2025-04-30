@@ -1,291 +1,294 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RevvedUp GTI</title>
-    <style>
-        
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: white;
-            text-align: center;
-            background: #000;
-        }
-    
-        .video-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            object-fit: cover;
-            z-index: -1;
-        }
-        
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-            z-index: 1;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RevvedUp GTI</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      background: #000;
+    }
 
-        .video-text {
-            position: absolute;
-            top: 30%;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #00bcd4;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-        }
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -2;
+    }
 
-        .sidebar {
-            width: 200px;
-            height: 100vh;
-            background: rgba(20, 20, 20, 0.9);
-            padding: 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+    .video-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
 
-        .sidebar a {
-            display: block;
-            color: white;
-            padding: 15px;
-            text-decoration: none;
-            text-align: center;
-            width: 100%;
-            border-radius: 5px;
-        }
+    .topnav {
+      background: rgba(20, 20, 20, 0.95);
+      padding: 15px 30px;
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 10;
+    }
 
-        .sidebar a:hover {
-            background: grey;
-        }
+    .topnav a {
+      color: #00bcd4;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1em;
+      transition: 0.3s;
+    }
 
-        .topnav {
-            width: calc(100% - 200px);
-            background: rgba(30, 30, 30, 0.9);
-            padding: 15px;
-            text-align: center;
-            position: fixed;
-            top: 0;
-            left: 200px;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
+    .topnav a:hover {
+      color: white;
+      text-shadow: 0 0 8px #00bcd4;
+    }
 
-        .topnav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2em;
-        }
+    .video-text {
+      text-align: center;
+      margin-top: 130px;
+      padding: 20px;
+    }
 
-        .topnav a:hover {
-            text-decoration: underline;
-        }
+    .video-text h1 {
+      font-size: 3em;
+      color: #00bcd4;
+      text-shadow: 0 0 10px #00bcd4;
+    }
 
-        
-        .content {
-            margin-left: 220px;
-            margin-top: 70px;
-            padding: 20px;
-            width: calc(100% - 220px);
-        }
+    .video-text p {
+      font-size: 1.2em;
+      color: #ccc;
+    }
 
-        .article {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 30px;
-            border-radius: 10px;
-            margin: 20px auto;
-            width: 80%;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
+    .content {
+      padding: 60px 20px 100px;
+      max-width: 1000px;
+      margin: auto;
+    }
 
-        .slideshow-container {
-            position: relative;
-            max-width: 100%;
-            margin: 30px auto;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-        }
+    .article {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 10px;
+      margin: 20px 0;
+      box-shadow: 0 4px 15px rgba(0, 255, 255, 0.1);
+    }
 
-        .slide {
-            display: none;
-            width: 100%;
-            height: 400px;
-        }
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: 30px auto;
+      border-radius: 10px;
+      overflow: hidden;
+    }
 
-        .slide img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+    .slide {
+      display: none;
+    }
 
-        .footer {
-            background: rgba(0, 0, 0, 0.8);
-            padding: 15px;
-            text-align: center;
-            width: 100%;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-        }
+    .slide img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+    }
 
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            padding: 16px;
-            color: white;
-            font-weight: bold;
-            font-size: 18px;
-            background-color: rgba(0,0,0,0.5);
-            border: none;
-            border-radius: 3px;
-        }
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 10px 18px;
+      margin-top: -22px;
+      color: #00bcd4;
+      font-weight: bold;
+      font-size: 24px;
+      transition: 0.3s ease;
+      user-select: none;
+      border-radius: 5px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
 
-        .next {
-            right: 0;
-        }
+    .next {
+      right: 0;
+    }
 
-        .dots {
-            text-align: center;
-            margin-top: 15px;
-        }
+    .prev {
+      left: 0;
+    }
 
-        .dot {
-            cursor: pointer;
-            height: 15px;
-            width: 15px;
-            margin: 0 5px;
-            background-color: #777;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.3s;
-        }
+    .dots {
+      text-align: center;
+      margin-top: 10px;
+    }
 
-        .active, .dot:hover {
-            background-color: #fff;
-        }
+    .dot {
+      cursor: pointer;
+      height: 12px;
+      width: 12px;
+      margin: 0 4px;
+      background-color: #888;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
 
-    </style>
+    .active, .dot:hover {
+      background-color: #00bcd4;
+    }
+
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .review-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: left;
+      box-shadow: 0 4px 15px rgba(0, 255, 255, 0.1);
+    }
+
+    .review-card img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      float: left;
+      margin-right: 15px;
+      border: 2px solid #00bcd4;
+    }
+
+    .review-card p {
+      margin: 5px 0;
+      font-size: 0.95em;
+    }
+
+    .footer {
+      background: rgba(0, 0, 0, 0.8);
+      padding: 20px;
+      text-align: center;
+      color: #888;
+      position: relative;
+    }
+
+  </style>
 </head>
 <body>
 
-    <video class="video-background" autoplay loop muted>
-        <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-    
-    <div class="video-overlay"></div>
-    
-    <div class="video-text">
-        <h1>RevvedUp GTI – Turbocharged Passion</h1>
-        <p>Join the ultimate GTI community. Share mods, tips, and turbocharged excitement!</p>
+<video class="video-background" autoplay loop muted>
+  <source src="https://www.w3schools.com/html/movie.mp4" type="video/mp4" />
+</video>
+<div class="video-overlay"></div>
+
+<!-- Top Nav -->
+<div class="topnav">
+  <a href="#">Home</a>
+  <a href="#">About Us</a>
+  <a href="#">Latest Builds</a>
+  <a href="#">Contact</a>
+</div>
+
+<div class="video-text">
+  <h1>RevvedUp GTI – Turbocharged Passion</h1>
+  <p>Join the ultimate GTI community. Share mods, tips, and turbocharged excitement!</p>
+</div>
+
+<div class="content">
+
+  <div class="article">
+    <h1>Welcome to RevvedUp GTI!</h1>
+    <p>RevvedUp GTI is the ultimate hub for enthusiasts who share a passion for Volkswagen GTI vehicles. Join us as we dive into mods, performance upgrades, and the GTI lifestyle!</p>
+  </div>
+
+  <!-- Slideshow -->
+  <div class="slideshow-container">
+    <div class="slide"><img src="https://via.placeholder.com/1000x500?text=GTI+Car+1" alt="GTI 1"></div>
+    <div class="slide"><img src="https://via.placeholder.com/1000x500?text=GTI+Car+2" alt="GTI 2"></div>
+    <div class="slide"><img src="https://via.placeholder.com/1000x500?text=GTI+Car+3" alt="GTI 3"></div>
+
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+  </div>
+
+  <div class="dots">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+  <!-- Reviews -->
+  <div class="article">
+    <h2>🚗 Reviews from Our Community</h2>
+    <div class="reviews">
+      <div class="review-card">
+        <img src="https://via.placeholder.com/60" alt="John D.">
+        <p><strong>John D.</strong></p>
+        <p>"Joining RevvedUp has been an amazing experience! The community is so welcoming, and I’ve learned so much about tuning and modifying my GTI."</p>
+      </div>
+      <div class="review-card">
+        <img src="https://via.placeholder.com/60" alt="Sarah M.">
+        <p><strong>Sarah M.</strong></p>
+        <p>"This is THE place for any GTI enthusiast. I’ve made lasting connections and had some incredible experiences!"</p>
+      </div>
     </div>
+  </div>
+</div>
 
-    <!-- Sidebar -->
-    <div class="sidebar">
-        <a href="#">Home</a>
-        <a href="#">GTI Mods</a>
-        <a href="#">Performance Upgrades</a>
-        <a href="#">Gallery</a>
-        <a href="#">Community</a>
-    </div>
+<div class="footer">
+  <p>&copy; 2025 RevvedUp GTI. All rights reserved.</p>
+</div>
 
-    <!-- Top Navigation -->
-    <div class="topnav">
-        <a href="#">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">Latest Builds</a>
-        <a href="#">Contact</a>
-    </div>
+<script>
+  let slideIndex = 0;
+  const slides = document.getElementsByClassName("slide");
+  const dots = document.getElementsByClassName("dot");
 
-    <!-- Main Content -->
-    <div class="content">
-        <div class="article">
-            <h1>Welcome to RevvedUp GTI!</h1>
-            <p>RevvedUp GTI is the ultimate hub for enthusiasts who share a passion for Volkswagen GTI vehicles. Join us as we dive into mods, performance upgrades, and the GTI lifestyle!</p>
-        </div>
+  function showSlides() {
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    setTimeout(showSlides, 5000);
+  }
 
-        <!-- Slideshow for Cars -->
-        <div class="slideshow-container">
-            <div class="slide">
-                <img src="https://via.placeholder.com/1000x500?text=GTI+Car+1" alt="GTI 1">
-            </div>
-            <div class="slide">
-                <img src="https://via.placeholder.com/1000x500?text=GTI+Car+2" alt="GTI 2">
-            </div>
-            <div class="slide">
-                <img src="https://via.placeholder.com/1000x500?text=GTI+Car+3" alt="GTI 3">
-            </div>
-            <a class="prev" onclick="plusSlides(-1)">❮</a>
-            <a class="next" onclick="plusSlides(1)">❯</a>
-        </div>
+  function plusSlides(n) {
+    slideIndex += n - 1;
+    if (slideIndex < 0) slideIndex = slides.length - 1;
+    if (slideIndex >= slides.length) slideIndex = 0;
+    showSlides();
+  }
 
-        <div class="dots">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-        </div>
+  function currentSlide(n) {
+    slideIndex = n - 1;
+    showSlides();
+  }
 
-        <div class="article">
-            <h2>🚗 Reviews from Our Community</h2>
-            <p>"Joining RevvedUp has been an amazing experience! The community is so welcoming, and I’ve learned so much about tuning and modifying my GTI." - John D.</p>
-            <p>"This is THE place for any GTI enthusiast. I’ve made lasting connections and had some incredible experiences!" - Sarah M.</p>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        <p>&copy; 2025 RevvedUp GTI. All rights reserved.</p>
-    </div>
-
-    <script>
-        let slideIndex = 0;
-        const slides = document.getElementsByClassName("slide");
-        const dots = document.getElementsByClassName("dot");
-
-        function showSlides() {
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-            setTimeout(showSlides, 5000);
-        }
-
-        function plusSlides(n) {
-            slideIndex += n - 1;
-            showSlides();
-        }
-
-        function currentSlide(n) {
-            slideIndex = n - 1;
-            showSlides();
-        }
-
-        showSlides();
-    </script>
+  showSlides();
+</script>
 
 </body>
 </html>
