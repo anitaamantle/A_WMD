@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Revved Up GTI</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revved Up - GTI Fanatics</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <style>
     * {
@@ -17,15 +17,6 @@
       background-color: #0d0d0d;
       color: #f0f0f0;
       line-height: 1.6;
-    }
-
-    a {
-      color: #00bcd4;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
     }
 
     header {
@@ -42,6 +33,7 @@
 
     .topnav {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
       background-color: #1f1f1f;
       padding: 10px 0;
@@ -51,94 +43,59 @@
       margin: 5px 15px;
       padding: 10px 15px;
       border-radius: 5px;
-      transition: background-color 0.3s;
+      color: #00bcd4;
+      text-decoration: none;
     }
 
     .topnav a:hover {
       background-color: #333;
     }
 
-    .slideshow-container {
+    .video-section {
       position: relative;
-      max-width: 1000px;
-      margin: 30px auto;
-      border-radius: 12px;
+      height: 90vh;
       overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
     }
 
-    .slide {
-      display: none;
-      width: 100%;
-      height: 500px;
-    }
-
-    .slide img {
+    .video-section video {
+      position: absolute;
+      top: 50%;
+      left: 50%;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transform: translate(-50%, -50%);
+      z-index: 0;
     }
 
-    .fade {
-      animation: fade 1.5s ease-in-out;
-    }
-
-    @keyframes fade {
-      from {opacity: .4}
-      to {opacity: 1}
-    }
-
-    .prev, .next {
-      cursor: pointer;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      padding: 16px;
-      color: white;
-      font-weight: bold;
-      font-size: 18px;
-      background-color: rgba(0,0,0,0.5);
-      border: none;
-      border-radius: 3px;
-    }
-
-    .next {
-      right: 0;
-    }
-
-    .prev:hover, .next:hover {
-      background-color: rgba(0,0,0,0.8);
-    }
-
-    .dots {
+    .video-overlay {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
-      margin-top: 15px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
     }
 
-    .dot {
-      cursor: pointer;
-      height: 15px;
-      width: 15px;
-      margin: 0 5px;
-      background-color: #777;
-      border-radius: 50%;
-      display: inline-block;
-      transition: background-color 0.3s;
+    .video-overlay h1 {
+      font-size: 3rem;
+      color: #00eaff;
+      text-shadow: 0 0 10px #00eaff;
     }
 
-    .active, .dot:hover {
-      background-color: #00bcd4;
+    .video-overlay p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #f0f0f0;
     }
 
     .content {
       max-width: 1000px;
       margin: 40px auto;
       padding: 0 20px;
-    }
-
-    .content h1, .content h2 {
-      color: #00bcd4;
-      margin-bottom: 10px;
     }
 
     .card {
@@ -179,59 +136,47 @@
       border-top: 2px solid #00bcd4;
       color: #999;
     }
-
-    @media (max-width: 768px) {
-      .slide {
-        height: 300px;
-      }
-    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Revved Up GTI</h1>
+    <h1>Revved Up | GTI Fanatics</h1>
   </header>
 
   <div class="topnav">
     <a href="index.html">Home</a>
-    <a href="revvedup.html">Revved Up</a>
-    <a href="streettorque.html">Street Torque</a>
-    <a href="torquetalk.html">Torque Talk</a>
-    <a href="#">About</a>
+    <a href="#">Meets</a>
+    <a href="#">Gallery</a>
+    <a href="#">Reviews</a>
+    <a href="#">Contact</a>
   </div>
 
-  <div class="slideshow-container">
-    <div class="slide fade">
-      <img src="https://i.pinimg.com/originals/74/f1/01/74f10162f80466f5e7bc76e168ea58a0.jpg" alt="GTI Stance 1">
+  <div class="video-section">
+    <video autoplay muted loop>
+      <source src="https://cdn.coverr.co/videos/coverr-night-drive-7040/1080p.mp4" type="video/mp4">
+      
+    </video>
+    <div class="video-overlay">
+      <div>
+        <h1>GTI Nights, Neon Lights</h1>
+        <p>Join the stance revolution. Show your build. Live the scene.</p>
+      </div>
     </div>
-    <div class="slide fade">
-      <img src="https://i.pinimg.com/originals/2c/e7/99/2ce799db6c19e7e2de31c9d963c92fd5.jpg" alt="GTI Stance 2">
-    </div>
-    <div class="slide fade">
-      <img src="https://i.pinimg.com/originals/fb/01/f3/fb01f353e0b7fdc4188968bc6e44f5f0.jpg" alt="GTI Night Drive">
-    </div>
-    <a class="prev" onclick="plusSlides(-1)">❮</a>
-    <a class="next" onclick="plusSlides(1)">❯</a>
-  </div>
-
-  <div class="dots">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
   </div>
 
   <div class="content">
-    <h1>Welcome GTI Fans!</h1>
     <div class="card">
-      <p>Revved Up is the ultimate space for GTI and stance lovers. Here, we appreciate clean builds, slammed rides, and aggressive styling. Got a Golf that turns heads? Share it!</p>
-      <p>💬 Community discussions | 📸 Car feature showcases | 🔧 Mod tips and guides</p>
+      <h2>About Revved Up</h2>
+      <p>Revved Up is home to VW GTI lovers and stance enthusiasts who live for sleek lines, slammed suspensions, and show-ready builds.</p>
     </div>
 
-    <h2>🔥 Featured Builds</h2>
     <div class="card">
-      <p>Our car of the month: <strong>@BotswanaStance_GT</strong>'s slammed MK7 with custom exhaust and rare BBS RS wheels.</p>
-      <a class="neon-btn" href="#">Submit Your Ride</a>
+      <h2>Next GTI Meet</h2>
+      <p><strong>Date:</strong> 22 March 2025</p>
+      <p><strong>Location:</strong> Tlokweng GTI Garage Hangout</p>
+      <a href="#" class="neon-btn">Join Now</a>
+      <a href="#" class="neon-btn">Submit Your Build</a>
     </div>
   </div>
 
@@ -239,36 +184,5 @@
     <p>📞 Contact Us: info@gearheadcollective.com | 📍 123 Car Street, Gaborone, Botswana</p>
   </div>
 
-  <script>
-    let slideIndex = 0;
-    const slides = document.getElementsByClassName("slide");
-    const dots = document.getElementsByClassName("dot");
-
-    function showSlides() {
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}
-      for (let i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex-1].style.display = "block";
-      dots[slideIndex-1].className += " active";
-      setTimeout(showSlides, 10000);
-    }
-
-    function plusSlides(n) {
-      slideIndex += n - 1;
-      showSlides();
-    }
-
-    function currentSlide(n) {
-      slideIndex = n - 1;
-      showSlides();
-    }
-
-    showSlides();
-  </script>
 </body>
 </html>
