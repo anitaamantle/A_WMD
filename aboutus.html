@@ -1,12 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About Us | Gearhead Collective</title>
+
+  <!-- Bootstrap & Fonts -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #f0f0f0;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      text-align: center;
+      padding: 20px;
+      border-bottom: 2px solid #00bcd4;
+    }
+
+    header h1 {
+      color: #00bcd4;
+    }
+
+    .topnav {
+      background-color: #1f1f1f;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .topnav a {
+      color: #00bcd4;
+      margin: 0 15px;
+      padding: 10px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+
+    .topnav a:hover,
+    .topnav .active {
+      background-color: #333;
+      border-radius: 5px;
+    }
+
+    .about-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .card {
+      background-color: #1f1f1f;
+      padding: 25px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 188, 212, 0.2);
+      color: #e0e0e0;
+    }
+
+    .card h3 {
+      color: #00eaff;
+      margin-bottom: 10px;
+    }
+
+    .founder-card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .founder-card img {
+      max-width: 250px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 188, 212, 0.4);
+    }
+
+    .founder-bio {
+      flex: 1;
+    }
+
+    .footer {
+      background-color: #1a1a1a;
+      color: #999;
+      text-align: center;
+      padding: 20px;
+      border-top: 2px solid #00bcd4;
+    }
+
+    @media (max-width: 768px) {
+      .topnav a {
+        display: block;
+        margin: 10px auto;
+      }
+
+      .founder-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .founder-card img {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header><h1>About Gearhead Collective</h1></header>
+
+  <header>
+    <h1>About Gearhead Collective</h1>
+  </header>
+
   <div class="topnav">
     <a href="index.html">Home</a>
     <a href="communities.html">Communities</a>
@@ -15,10 +126,45 @@
     <a href="usercontent.html">User Content</a>
     <a class="active" href="#">About Us</a>
   </div>
-  <div class="content">
-    <h2>Our Mission</h2>
-    <p>Gearhead Collective exists to bring car lovers together – whether you're into classics, track beasts, or overland monsters. We're a family built on passion, power, and connection.</p>
+
+  <div class="about-section">
+
+    <div class="card founder-card">
+      <img src="founder.jpg" alt="Anita - Founder of Gearhead Collective">
+      <div class="founder-bio">
+        <h3>👩🏽‍🔧 Meet the Founder – Anita</h3>
+        <p>Hey, I’m Anita — the proud founder of Gearhead Collective! This platform was born out of pure love for cars and a dream to connect with others who share that same fire. 💙</p>
+        <p>My passion for cars started when I was little, watching my dad take care of his beloved Toyota Corolla. I remember being amazed at how a simple car could have so much character, especially after I saw videos online of modified Corollas looking absolutely stunning and street-ready.</p>
+        <p>That sparked something deep inside me. I started learning about car culture, watching builds, reading articles, and dreaming of starting my own collective. I realized there were so many people like me who love stance, speed, power, and expression through their rides.</p>
+        <p>So I built Gearhead Collective — a home for us all. Whether you’re into GTIs, Lambos, 6x6 monsters, or just love the vibe — this space is yours too. Welcome to the family.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>🔥 Our Mission</h3>
+      <p>Gearhead Collective exists to bring car lovers together – whether you're into classics, track beasts, or off-road monsters. We're a family built on passion, power, and connection.</p>
+    </div>
+
+    <div class="card">
+      <h3>🚗 Our Vision</h3>
+      <p>To become the number one online community for Botswana's car enthusiasts – uniting diverse subcultures through events, knowledge sharing, and automotive creativity.</p>
+    </div>
+
+    <div class="card">
+      <h3>📍 Where It All Started</h3>
+      <p>What began as a local meet-up of GTI fans in Gaborone quickly grew into a vibrant movement – a collective of street racers, stance fanatics, and 4x4 adventurers who live and breathe motorsport culture.</p>
+    </div>
+
+    <div class="card">
+      <h3>🛠️ The Team</h3>
+      <p>Our squad is made up of young car lovers, builders, designers, and event organizers. We're students, tuners, dreamers—and this community is powered by YOU.</p>
+    </div>
   </div>
-  <div class="footer">Gearhead Collective © 2025</div>
+
+  <div class="footer">
+    Gearhead Collective © 2025 | Built with passion by car lovers 🛠️
+  </div>
+
 </body>
 </html>
+
