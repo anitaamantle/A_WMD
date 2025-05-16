@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Revved Up - GTI Fanatics</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -140,6 +139,36 @@
       color: #777;
     }
 
+    .build-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .build-box {
+      flex: 1 1 280px;
+      background-color: #1f1f1f;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,179,204,0.1);
+      text-align: center;
+    }
+
+    .build-box img {
+      width: 100%;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .build-box p {
+      margin-top: 12px;
+      color: #00b3cc;
+      font-size: 0.95rem;
+    }
+
     @media (max-width: 768px) {
       header h1 { font-size: 2rem; }
       .video-overlay h1 { font-size: 2.2rem; }
@@ -201,6 +230,31 @@
       <a href="#" class="neon-btn">Join Now</a>
       <a href="#" class="neon-btn">Submit Your Build</a>
     </div>
+
+    <div class="card">
+      <h2>🏆 Build of the Month</h2>
+      <p>This month’s crown goes to <strong>Thato's MK7 GTI</strong> — bagged on Air Lift Performance, custom copper BBS wheels, carbon diffuser, and a clean digital dash. A true stunner in motion and parked!</p>
+      <img src="https://i.imgur.com/XBtjAnk.jpg" alt="Thato's GTI Build" style="width:100%; border-radius:10px; margin-top:15px; box-shadow:0 0 10px rgba(0,179,204,0.3);" />
+    </div>
+
+    <div class="build-row">
+      <div class="build-box">
+        <img src="https://i.imgur.com/AMvx7Iv.jpg" alt="March Build">
+        <p>💎 March: Sello's Static MK6 — tuck game elite and polished lip perfection.</p>
+      </div>
+      <div class="build-box">
+        <img src="https://i.imgur.com/vM4ycmz.jpg" alt="February Build">
+        <p>🔥 February: Naledi's Golf 6R — full Maxton kit with galaxy wrap and starliner roof.</p>
+      </div>
+      <div class="build-box">
+        <img src="https://i.imgur.com/sUhs7C8.jpg" alt="January Build">
+        <p>🚀 January: Bofelo's widebody MK5 GTI — built for stance wars with custom molded fenders.</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 25px;">
+      <a href="submit.html" class="neon-btn">Submit for Next Month</a>
+    </div>
   </div>
 
   <div class="footer">
@@ -209,5 +263,6 @@
 
 </body>
 </html>
+
 
 
