@@ -20,11 +20,11 @@
       background-color: #1a1a1a;
       text-align: center;
       padding: 20px;
-      border-bottom: 2px solid #006f7a;
+      border-bottom: 2px solid #0099aa;
     }
 
     header h1 {
-      color: #0099aa;
+      color: #00b3cc;
       font-family: 'Playfair Display', serif;
     }
 
@@ -35,7 +35,7 @@
     }
 
     .topnav a {
-      color: #0099aa;
+      color: #00b3cc;
       margin: 0 15px;
       padding: 10px;
       text-decoration: none;
@@ -46,7 +46,7 @@
 
     .topnav a:hover,
     .topnav .active {
-      background-color: #003f47;
+      background-color: #004d59;
       border-radius: 5px;
     }
 
@@ -59,8 +59,13 @@
       color: #aaa;
     }
 
+    .content h2 {
+      font-family: 'Playfair Display', serif;
+      color: #00b3cc;
+    }
+
     .content em {
-      color: #00aabb;
+      color: #00b3cc;
       font-style: normal;
       font-weight: bold;
     }
@@ -77,7 +82,7 @@
     .article-card {
       background-color: #1c1c1c;
       border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0, 153, 170, 0.15);
+      box-shadow: 0 0 15px rgba(0, 179, 204, 0.15);
       color: #bbb;
       display: flex;
       flex-direction: column;
@@ -85,7 +90,7 @@
     }
 
     .article-card:hover {
-      box-shadow: 0 0 25px rgba(0, 153, 170, 0.4);
+      box-shadow: 0 0 25px rgba(0, 179, 204, 0.4);
     }
 
     .article-image {
@@ -114,7 +119,6 @@
       font-family: 'Playfair Display', serif;
       margin-bottom: 10px;
       font-size: 1.3rem;
-      flex-shrink: 0;
     }
 
     .article-card p {
@@ -127,124 +131,6 @@
     .read-more {
       align-self: flex-start;
       margin-top: 15px;
-      padding: 8px 18px;
-      border: 2px solid #00b3cc;
-      color: #00b3cc;
-      background: transparent;
-      border-radius: 25px;
-      font-weight: 600;
-      text-transform: uppercase;
-      text-decoration: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
-      font-size: 0.9rem;
-    }
+      padding: 8px 18
 
-    .read-more:hover {
-      background-color: #00b3cc;
-      color: #000;
-      box-shadow: 0 0 15px #00b3cc;
-      transform: scale(1.05);
-    }
-
-    .footer {
-      background-color: #1a1a1a;
-      color: #777;
-      text-align: center;
-      padding: 20px;
-      border-top: 2px solid #006f7a;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      .topnav a {
-        display: block;
-        margin: 10px auto;
-      }
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>Latest Car News</h1>
-  </header>
-
-  <div class="topnav">
-    <a href="index.html">Home</a>
-    <a href="communities.html">Communities</a>
-    <a href="meets.html">Meets</a>
-    <a class="active" href="#">News</a>
-    <a href="usercontent.html">User Content</a>
-    <a href="about.html">About Us</a>
-  </div>
-
-  <div class="content">
-    <h2>What's New?</h2>
-    <p>Coverage on new tech, upcoming events, global car trends, and Gearhead insider stories.</p>
-    <p><em>Gaborone Night Cruise coverage coming soon!</em></p>
-  </div>
-
-  <div class="news-section">
-
-    <div class="article-card">
-      <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=800&q=60" alt="Fontana Car Show" class="article-image" />
-      <div class="article-content">
-        <h3>Fontana Car Show Series 2025: A Classic Celebration</h3>
-        <p>The 2025 Fontana Car Show Series is set to feature a lineup of classic, muscle, and custom cars, complemented by live bands and high-energy performances. Each month brings a new theme, making it a must-attend for automotive enthusiasts.</p>
-        <a href="https://www.fontanaca.gov/CivicAlerts.aspx?AID=2815" target="_blank" class="read-more">Read More</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=60" alt="Car Wrap" class="article-image" />
-      <div class="article-content">
-        <h3>Top Car Customization Trends in 2025</h3>
-        <p>From full-color change vinyl wraps to AI-integrated modifications, 2025 is witnessing a surge in innovative car customization trends. Discover the top design ideas that are redefining automotive aesthetics and performance.</p>
-        <a href="https://www.templarwraps.com/post/top-10-design-ideas-for-car-customization-in-2025" target="_blank" class="read-more">Read More</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=800&q=60" alt="Japanese Car Cruise-In" class="article-image" />
-      <div class="article-content">
-        <h3>Japanese Car Cruise-In 2025 at Petersen Museum</h3>
-        <p>The Petersen Automotive Museum's annual Japanese Car Cruise-In continues to draw thousands of JDM enthusiasts. The 2025 event promises an impressive showcase of Japanese automotive excellence.</p>
-        <a href="https://www.petersen.org/events/japanese-car-cruise-in-2025" target="_blank" class="read-more">Read More</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=60" alt="New York Auto Show" class="article-image" />
-      <div class="article-content">
-        <h3>2025 New York International Auto Show Highlights</h3>
-        <p>The 2025 NYIAS unveiled several exciting models, including the 2025 Jeep Wagoneer Overland Special Edition and the 2026 Subaru Outback. The show highlighted the future of automotive design and technology.</p>
-        <a href="https://en.wikipedia.org/wiki/New_York_International_Auto_Show" target="_blank" class="read-more">Read More</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=60" alt="Car Interior" class="article-image" />
-      <div class="article-content">
-        <h3>Cozy Car Interiors: The New Trend in 2025</h3>
-        <p>Drivers are transforming their car interiors into cozy, personalized spaces. From aesthetic accessories to functional upgrades, discover how to make your car interior both cute and comfortable.</p>
-        <a href="https://www.bhg.com/aesthetic-car-decor-trend-11727654" target="_blank" class="read-more">Read More</a>
-      </div>
-    </div>
-  </div>
-
-<div class="article-card">
-  <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=800&q=60" alt="Electric Car Revolution" class="article-image" />
-  <div class="article-content">
-    <h3>Electric Car Revolution Accelerates in 2025</h3>
-    <p>With advances in battery technology and expanding charging networks, 2025 is shaping up to be a landmark year for electric vehicles. Discover how this shift impacts car culture and modification trends worldwide.</p>
-    <a href="https://www.greencarreports.com/news/1131013_electric-car-adoption-and-infrastructure-in-2025" target="_blank" class="read-more">Read More</a>
-  </div>
-</div>
-
-
-  <div class="footer">
-    Gearhead Collective © 2025 | Gaborone's car fam 🤙🏽
-  </div>
-</body>
-</html>
 
