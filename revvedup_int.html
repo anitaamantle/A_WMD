@@ -5,17 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Revved Up - GTI Fanatics</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Orbitron', sans-serif;
       background-color: #0d0d0d;
-      color: #f0f0f0;
+      color: #ccc;
       line-height: 1.6;
     }
 
@@ -23,12 +20,12 @@
       background-color: #1a1a1a;
       padding: 20px 0;
       text-align: center;
-      border-bottom: 2px solid #00bcd4;
+      border-bottom: 2px solid #00b3cc;
     }
 
     header h1 {
       font-size: 2.5rem;
-      color: #00bcd4;
+      color: #00b3cc;
     }
 
     .topnav {
@@ -43,13 +40,13 @@
       margin: 5px 10px;
       padding: 10px 15px;
       border-radius: 5px;
-      color: #00bcd4;
+      color: #00b3cc;
       text-decoration: none;
       transition: background-color 0.3s ease;
     }
 
     .topnav a:hover {
-      background-color: #333;
+      background-color: #003f47;
     }
 
     .video-section {
@@ -83,14 +80,14 @@
 
     .video-overlay h1 {
       font-size: 3rem;
-      color: #00eaff;
-      text-shadow: 0 0 10px #00eaff;
+      color: #00b3cc;
+      text-shadow: 0 0 10px #00b3cc;
     }
 
     .video-overlay p {
       font-size: 1.2rem;
       margin-top: 10px;
-      color: #f0f0f0;
+      color: #ddd;
     }
 
     .content {
@@ -103,8 +100,13 @@
       background-color: #1f1f1f;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,188,212,0.15);
+      box-shadow: 0 2px 8px rgba(0,179,204,0.15);
       margin-bottom: 30px;
+    }
+
+    .card h2 {
+      color: #00b3cc;
+      margin-bottom: 10px;
     }
 
     .neon-btn {
@@ -113,20 +115,20 @@
       padding: 12px 25px;
       font-weight: bold;
       font-size: 1rem;
-      color: #00eaff;
+      color: #00b3cc;
       background: transparent;
-      border: 2px solid #00eaff;
+      border: 2px solid #00b3cc;
       border-radius: 30px;
       text-transform: uppercase;
       letter-spacing: 1px;
       transition: all 0.3s ease-in-out;
-      box-shadow: 0 0 8px #00eaff;
+      box-shadow: 0 0 8px #00b3cc;
     }
 
     .neon-btn:hover {
-      background-color: #00eaff;
+      background-color: #00b3cc;
       color: #000;
-      box-shadow: 0 0 15px #00eaff, 0 0 30px #00eaff;
+      box-shadow: 0 0 15px #00b3cc, 0 0 30px #00b3cc;
       transform: scale(1.05);
     }
 
@@ -134,65 +136,25 @@
       text-align: center;
       padding: 20px;
       background-color: #1a1a1a;
-      border-top: 2px solid #00bcd4;
-      color: #999;
+      border-top: 2px solid #00b3cc;
+      color: #777;
     }
 
-    /* RESPONSIVE DESIGN */
     @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      .video-overlay h1 {
-        font-size: 2.2rem;
-      }
-
-      .video-overlay p {
-        font-size: 1rem;
-      }
-
-      .topnav a {
-        font-size: 0.9rem;
-        padding: 8px 12px;
-      }
-
-      .neon-btn {
-        font-size: 0.9rem;
-        padding: 10px 20px;
-      }
+      header h1 { font-size: 2rem; }
+      .video-overlay h1 { font-size: 2.2rem; }
+      .video-overlay p { font-size: 1rem; }
+      .topnav a { font-size: 0.9rem; padding: 8px 12px; }
+      .neon-btn { font-size: 0.9rem; padding: 10px 20px; }
     }
 
     @media (max-width: 480px) {
-      header h1 {
-        font-size: 1.6rem;
-      }
-
-      .video-overlay h1 {
-        font-size: 1.6rem;
-      }
-
-      .video-overlay p {
-        font-size: 0.9rem;
-      }
-
-      .topnav {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .topnav a {
-        margin: 8px 0;
-        width: 90%;
-        text-align: center;
-      }
-
-      .neon-btn {
-        display: block;
-        margin: 10px auto;
-        width: 80%;
-        text-align: center;
-      }
+      header h1 { font-size: 1.6rem; }
+      .video-overlay h1 { font-size: 1.6rem; }
+      .video-overlay p { font-size: 0.9rem; }
+      .topnav { flex-direction: column; align-items: center; }
+      .topnav a { margin: 8px 0; width: 90%; text-align: center; }
+      .neon-btn { display: block; margin: 10px auto; width: 80%; text-align: center; }
     }
   </style>
 </head>
@@ -215,7 +177,6 @@
       <source src="media/gti_meet.mp4.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-
     <div class="video-overlay">
       <div>
         <h1>GTI Nights, Comfort Drives</h1>
@@ -227,13 +188,16 @@
   <div class="content">
     <div class="card">
       <h2>About Revved Up</h2>
-      <p>Revved Up is home to VW GTI lovers and stance enthusiasts who live for sleek lines, slammed suspensions, and show-ready builds.</p>
+      <p><strong>Revved Up</strong> is home to VW GTI lovers and stance enthusiasts who live for sleek lines, slammed suspensions, and show-ready builds.</p>
+      <p>Whether you're bagged or static, OEM+ or wild camber, there's a place for you here. This crew thrives on detail, wheel fitment, and clean finishes. We swap tips, rate rides, and drop builds that stop traffic — literally.</p>
+      <p>GTI culture is about community, style, and a touch of rebellion. From night meets in Gabs to highway rollouts, it's not just a car — it's the identity.</p>
     </div>
 
     <div class="card">
       <h2>Next GTI Meet</h2>
       <p><strong>Date:</strong> 22 March 2025</p>
       <p><strong>Location:</strong> Tlokweng GTI Garage Hangout</p>
+      <p>Come through for static standoffs, air battles, and that signature VW sound echoing through the night. Show us what you’ve built!</p>
       <a href="#" class="neon-btn">Join Now</a>
       <a href="#" class="neon-btn">Submit Your Build</a>
     </div>
@@ -245,4 +209,5 @@
 
 </body>
 </html>
+
 
