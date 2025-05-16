@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>News | Gearhead Collective</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 
   <style>
     body {
       background-color: #0d0d0d;
-      color: #f0f0f0;
+      color: #ccc;
       font-family: 'Orbitron', sans-serif;
     }
 
@@ -20,11 +20,11 @@
       background-color: #1a1a1a;
       text-align: center;
       padding: 20px;
-      border-bottom: 2px solid #00bcd4;
+      border-bottom: 2px solid #006f7a;
     }
 
     header h1 {
-      color: #00bcd4;
+      color: #0099aa;
       font-family: 'Playfair Display', serif;
     }
 
@@ -35,87 +35,124 @@
     }
 
     .topnav a {
-      color: #00bcd4;
+      color: #0099aa;
       margin: 0 15px;
       padding: 10px;
       text-decoration: none;
       display: inline-block;
       transition: background 0.3s;
+      font-weight: 600;
     }
 
     .topnav a:hover,
     .topnav .active {
-      background-color: #333;
+      background-color: #003f47;
       border-radius: 5px;
     }
 
     .content {
       max-width: 1000px;
-      margin: 40px auto;
+      margin: 40px auto 20px;
       padding: 0 20px;
       font-size: 1.1rem;
       line-height: 1.6;
+      color: #aaa;
     }
 
     .content em {
-      color: #00eaff;
+      color: #00aabb;
       font-style: normal;
       font-weight: bold;
     }
 
     .news-section {
       max-width: 1000px;
-      margin: 40px auto 80px;
+      margin: 20px auto 80px;
       padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
 
     .article-card {
-      background-color: #1f1f1f;
-      padding: 25px;
-      margin-bottom: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 188, 212, 0.2);
-      color: #e0e0e0;
+      background-color: #1c1c1c;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 153, 170, 0.15);
+      color: #bbb;
+      display: flex;
+      flex-direction: column;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .article-card:hover {
+      box-shadow: 0 0 25px rgba(0, 153, 170, 0.4);
+    }
+
+    .article-image {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      filter: brightness(0.8);
+      transition: filter 0.3s ease;
+    }
+
+    .article-card:hover .article-image {
+      filter: brightness(1);
+    }
+
+    .article-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
     }
 
     .article-card h3 {
-      color: #00eaff;
-      margin-bottom: 10px;
+      color: #00b3cc;
       font-family: 'Playfair Display', serif;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      flex-shrink: 0;
     }
 
     .article-card p {
+      flex-grow: 1;
       font-size: 1rem;
-      line-height: 1.6;
+      line-height: 1.5;
+      color: #bbb;
     }
 
     .read-more {
-      display: inline-block;
+      align-self: flex-start;
       margin-top: 15px;
-      padding: 10px 20px;
-      border: 2px solid #00eaff;
-      color: #00eaff;
+      padding: 8px 18px;
+      border: 2px solid #00b3cc;
+      color: #00b3cc;
       background: transparent;
-      border-radius: 30px;
-      font-weight: bold;
+      border-radius: 25px;
+      font-weight: 600;
       text-transform: uppercase;
       text-decoration: none;
-      transition: 0.3s;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      font-size: 0.9rem;
     }
 
     .read-more:hover {
-      background-color: #00eaff;
+      background-color: #00b3cc;
       color: #000;
-      box-shadow: 0 0 12px #00eaff;
+      box-shadow: 0 0 15px #00b3cc;
       transform: scale(1.05);
     }
 
     .footer {
       background-color: #1a1a1a;
-      color: #999;
+      color: #777;
       text-align: center;
       padding: 20px;
-      border-top: 2px solid #00bcd4;
+      border-top: 2px solid #006f7a;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
@@ -150,44 +187,54 @@
   <div class="news-section">
 
     <div class="article-card">
-      <h3>Fontana Car Show Series 2025: A Classic Celebration</h3>
-      <p>The 2025 Fontana Car Show Series is set to feature a lineup of classic, muscle, and custom cars, complemented by live bands and high-energy performances. Each month brings a new theme, making it a must-attend for automotive enthusiasts.</p>
-      <a href="https://www.fontanaca.gov/CivicAlerts.aspx?AID=2815" class="read-more" target="_blank">Read More</a>
+      <img src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=800&q=60" alt="Fontana Car Show" class="article-image" />
+      <div class="article-content">
+        <h3>Fontana Car Show Series 2025: A Classic Celebration</h3>
+        <p>The 2025 Fontana Car Show Series is set to feature a lineup of classic, muscle, and custom cars, complemented by live bands and high-energy performances. Each month brings a new theme, making it a must-attend for automotive enthusiasts.</p>
+        <a href="https://www.fontanaca.gov/CivicAlerts.aspx?AID=2815" target="_blank" class="read-more">Read More</a>
+      </div>
     </div>
 
-
     <div class="article-card">
-      <h3>Top Car Customization Trends in 2025</h3>
-      <p>From full-color change vinyl wraps to AI-integrated modifications, 2025 is witnessing a surge in innovative car customization trends. Discover the top design ideas that are redefining automotive aesthetics and performance.</p>
-      <a href="https://www.templarwraps.com/post/top-10-design-ideas-for-car-customization-in-2025" class="read-more" target="_blank">Read More</a>
+      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=60" alt="Car Wrap" class="article-image" />
+      <div class="article-content">
+        <h3>Top Car Customization Trends in 2025</h3>
+        <p>From full-color change vinyl wraps to AI-integrated modifications, 2025 is witnessing a surge in innovative car customization trends. Discover the top design ideas that are redefining automotive aesthetics and performance.</p>
+        <a href="https://www.templarwraps.com/post/top-10-design-ideas-for-car-customization-in-2025" target="_blank" class="read-more">Read More</a>
+      </div>
     </div>
 
-
     <div class="article-card">
-      <h3>Japanese Car Cruise-In 2025 at Petersen Museum</h3>
-      <p>The Petersen Automotive Museum's annual Japanese Car Cruise-In continues to draw thousands of JDM enthusiasts. The 2025 event promises an impressive showcase of Japanese automotive excellence.</p>
-      <a href="https://www.petersen.org/events/japanese-car-cruise-in-2025" class="read-more" target="_blank">Read More</a>
+      <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=800&q=60" alt="Japanese Car Cruise-In" class="article-image" />
+      <div class="article-content">
+        <h3>Japanese Car Cruise-In 2025 at Petersen Museum</h3>
+        <p>The Petersen Automotive Museum's annual Japanese Car Cruise-In continues to draw thousands of JDM enthusiasts. The 2025 event promises an impressive showcase of Japanese automotive excellence.</p>
+        <a href="https://www.petersen.org/events/japanese-car-cruise-in-2025" target="_blank" class="read-more">Read More</a>
+      </div>
     </div>
 
-
     <div class="article-card">
-      <h3>2025 New York International Auto Show Highlights</h3>
-      <p>The 2025 NYIAS unveiled several exciting models, including the 2025 Jeep Wagoneer Overland Special Edition and the 2026 Subaru Outback. The show highlighted the future of automotive design and technology.</p>
-      <a href="https://en.wikipedia.org/wiki/New_York_International_Auto_Show" class="read-more" target="_blank">Read More</a>
+      <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=60" alt="New York Auto Show" class="article-image" />
+      <div class="article-content">
+        <h3>2025 New York International Auto Show Highlights</h3>
+        <p>The 2025 NYIAS unveiled several exciting models, including the 2025 Jeep Wagoneer Overland Special Edition and the 2026 Subaru Outback. The show highlighted the future of automotive design and technology.</p>
+        <a href="https://en.wikipedia.org/wiki/New_York_International_Auto_Show" target="_blank" class="read-more">Read More</a>
+      </div>
     </div>
 
-
     <div class="article-card">
-      <h3>Cozy Car Interiors: The New Trend in 2025</h3>
-      <p>Drivers are transforming their car interiors into cozy, personalized spaces. From aesthetic accessories to functional upgrades, discover how to make your car interior both cute and comfortable.</p>
-      <a href="https://www.bhg.com/aesthetic-car-decor-trend-11727654" class="read-more" target="_blank">Read More</a>
+      <img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?auto=format&fit=crop&w=800&q=60" alt="Car Interior" class="article-image" />
+      <div class="article-content">
+        <h3>Cozy Car Interiors: The New Trend in 2025</h3>
+        <p>Drivers are transforming their car interiors into cozy, personalized spaces. From aesthetic accessories to functional upgrades, discover how to make your car interior both cute and comfortable.</p>
+        <a href="https://www.bhg.com/aesthetic-car-decor-trend-11727654" target="_blank" class="read-more">Read More</a>
+      </div>
     </div>
   </div>
 
   <div class="footer">
     Gearhead Collective © 2025 | Gaborone's car fam 🤙🏽
   </div>
-
 </body>
 </html>
 
