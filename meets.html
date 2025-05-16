@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Meets | Gearhead Collective</title>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 
   <style>
     body {
       background-color: #0d0d0d;
-      color: #f0f0f0;
+      color: #ccc;
       font-family: 'Orbitron', sans-serif;
     }
 
@@ -20,11 +20,12 @@
       background-color: #1a1a1a;
       text-align: center;
       padding: 20px;
-      border-bottom: 2px solid #00bcd4;
+      border-bottom: 2px solid #0099aa;
     }
 
     header h1 {
-      color: #00bcd4;
+      color: #00b3cc;
+      font-family: 'Playfair Display', serif;
     }
 
     .topnav {
@@ -34,73 +35,85 @@
     }
 
     .topnav a {
-      color: #00bcd4;
+      color: #00b3cc;
       margin: 0 15px;
       padding: 10px;
       text-decoration: none;
       display: inline-block;
       transition: background 0.3s;
+      font-weight: 600;
     }
 
     .topnav a:hover,
     .topnav .active {
-      background-color: #333;
+      background-color: #004d59;
       border-radius: 5px;
     }
 
     .meets-section {
       max-width: 1000px;
-      margin: 40px auto;
+      margin: 40px auto 60px;
       padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
 
-    .card {
-      background-color: #1f1f1f;
-      padding: 25px;
-      margin-bottom: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 188, 212, 0.2);
-      color: #e0e0e0;
+    .meet-card {
+      background-color: #1c1c1c;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 179, 204, 0.15);
+      color: #ccc;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      transition: box-shadow 0.3s ease;
     }
 
-    .card h3 {
-      color: #00eaff;
+    .meet-card:hover {
+      box-shadow: 0 0 25px rgba(0, 179, 204, 0.3);
+    }
+
+    .meet-card h3 {
+      color: #00b3cc;
       margin-bottom: 10px;
+      font-family: 'Playfair Display', serif;
     }
 
-    .card img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-top: 15px;
+    .meet-card p {
+      font-size: 1rem;
+      line-height: 1.6;
     }
 
     .neon-btn {
       display: inline-block;
-      margin-top: 15px;
+      margin-top: auto;
       padding: 10px 20px;
-      border: 2px solid #00eaff;
-      color: #00eaff;
+      border: 2px solid #00b3cc;
+      color: #00b3cc;
       background: transparent;
-      border-radius: 30px;
+      border-radius: 25px;
       font-weight: bold;
       text-transform: uppercase;
       text-decoration: none;
       transition: 0.3s;
+      font-size: 0.9rem;
+      align-self: flex-start;
     }
 
     .neon-btn:hover {
-      background-color: #00eaff;
+      background-color: #00b3cc;
       color: #000;
-      box-shadow: 0 0 12px #00eaff;
-      transform: scale(1.05);
+      box-shadow: 0 0 10px #00b3cc;
     }
 
     .footer {
       background-color: #1a1a1a;
-      color: #999;
+      color: #777;
       text-align: center;
       padding: 20px;
-      border-top: 2px solid #00bcd4;
+      border-top: 2px solid #0099aa;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
@@ -128,34 +141,35 @@
 
   <div class="meets-section">
 
-    <div class="card">
-      <h3>🔥 Next Car Meet</h3>
-      <p>🗓️ <strong>Date:</strong> 15 February 2025</p>
-      <p>📍 <strong>Location:</strong> Oodi Offroad Extreme</p>
-      <p>🔥 Don’t miss the stanced GTIs, tuned racers, and lifted beasts in one place! Come through for good vibes, engine roars, and meet-ups that turn into family.</p>
-      <img src="meets1.jpg" alt="Flyer for February Meet">
-      <a href="#" class="neon-btn">RSVP / More Info</a>
+    <div class="meet-card">
+      <h3>🔥 February 2025 – Oodi Offroad Extreme</h3>
+      <p>Our first official meet of 2025 brings together the full Gearhead fam. Expect GTIs, stance builds, trail beasts, live engine rev battles, and local food vendors!</p>
+      <a href="#" class="neon-btn">Event Gallery</a>
     </div>
 
-
-    <div class="card">
-      <h3>🗓️ April Track Showdown (Coming Soon)</h3>
-      <p>🏁 High-octane straight-line races, street builds, and exclusive burnout battles!</p>
-      <img src="meets2.jpg" alt="Track Showdown Teaser">
-      <a href="#" class="neon-btn">Details Coming Soon</a>
+    <div class="meet-card">
+      <h3>🏁 April Track Showdown (Coming Soon)</h3>
+      <p>Quarter mile sprints, burnout competitions, and grudge matches. This is the fast lane of the collective — the street builds go head to head. Gaborone Raceway is the place to be.</p>
+      <a href="#" class="neon-btn">More Details</a>
     </div>
 
-
-    <div class="card">
-      <h3>💬 Want to Host or Suggest a Meet?</h3>
-      <p>We’re always looking for new locations and cool car crews to collaborate with. Drop us your ideas or your crew’s info and let’s make it happen.</p>
-      <a href="submit.html" class="neon-btn">Submit Your Meet</a>
+    <div class="meet-card">
+      <h3>🚙 June Offroad Challenge</h3>
+      <p>Ford Raptors, Land Cruisers, and lifted Hilux builds test their might in this dusty showdown. We're hitting the bush and climbing rocks — offroad fam, this one's yours!</p>
+      <a href="#" class="neon-btn">Join The Lineup</a>
+    </div>
+ 
+    <div class="meet-card">
+      <h3>🎶 Sunset Static – Chill Meet</h3>
+      <p>A relaxed sunset session with stanced builds, music, snacks and soft lights. Vibes only. Just park, walk around, meet the fam, and vibe.</p>
+      <a href="#" class="neon-btn">RSVP Now</a>
     </div>
   </div>
 
   <div class="footer">
-    Gearhead Collective © 2025 | Gaborone's car fam 🤙🏽
+    Gearhead Collective © 2025 | See you at the next meet 🚗🔥
   </div>
 
 </body>
 </html>
+
