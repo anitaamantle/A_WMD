@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gearhead Feedback</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #ccc;
+      font-family: 'Orbitron', sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid #0099aa;
+    }
+
+    header h1 {
+      color: #00b3cc;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: #1f1f1f;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 179, 204, 0.3);
+    }
+
+    .container h2 {
+      color: #00b3cc;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #00b3cc;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: #ccc;
+      font-size: 1rem;
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    textarea {
+      resize: vertical;
+    }
+
+    button {
+      background-color: #00b3cc;
+      color: #0d0d0d;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      font-family: 'Orbitron', sans-serif;
+      display: block;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #004d59;
+      box-shadow: 0 0 15px #00b3cc;
+      color: #fff;
+    }
+
+    .footer {
+      background-color: #1a1a1a;
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      border-top: 2px solid #0099aa;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Contact Gearhead Collective</h1>
+  </header>
+
+  <div class="container">
+    <h2>🚀 Wanna give feedback or ask something? Hit us up!</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="you@example.com" required />
+
+      <label for="message">Message:</label>
+      <textarea id="message" rows="4" placeholder="Type your message here..." required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Gearhead Collective | Email us at: feedback@gearheadcollective.com
+  </div>
+
+</body>
+</html>
