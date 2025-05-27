@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Torque Talk - Adventure Meets</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #ccc;
+      font-family: 'Orbitron', sans-serif;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-bottom: 2px solid #0099aa;
+    }
+
+    header h1 {
+      color: #00b3cc;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    .topnav {
+      background-color: #1f1f1f;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-bottom: 2px solid #0099aa;
+    }
+
+    .topnav a {
+      color: #00b3cc;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .topnav a:hover,
+    .topnav .active {
+      background-color: #004d59;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: left;
+    }
+
+    h2 {
+      color: #00b3cc;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+
+    .gallery-item {
+      background-color: #1f1f1f;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 179, 204, 0.15);
+      text-align: center;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .gallery-item p {
+      font-size: 0.95rem;
+      color: #aaa;
+    }
+
+    .footer {
+      background: #1a1a1a;
+      padding: 20px;
+      text-align: center;
+      border-top: 2px solid #0099aa;
+      color: #777;
+      font-family: 'Orbitron', sans-serif;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Torque Talk | Adventure Meets</h1>
+  </header>
+
+  <div class="topnav">
+    <a href="index.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="adventuremeets.html" class="active">Adventure Meets</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="content">
+    <h2>Gallery of Off-Road Adventures</h2>
+    <p>From bush trails to coastal cliffs — here's where the Torque Talk community comes alive through unforgettable off-road meetups and camping events.</p>
+
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="https://i.pinimg.com/originals/3d/ae/25/3dae25c20e943c3c67c5e5b62c810674.jpg" alt="Overlanding Camp">
+        <p><strong>Eastern Cape Trail</strong><br>Weekend camping with lifted Hiluxes and Defenders.</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://i.pinimg.com/originals/e6/b3/d0/e6b3d00d76181fd9a7fa708ee1f979cb.jpg" alt="Off-Road River Meetup">
+        <p><strong>River Run Meet</strong><br>Group mudding & deep water obstacle challenge.</p>
+      </div>
+      <div class="gallery-item">
+        <img src="https://i.pinimg.com/originals/26/f9/0a/26f90ad8434e42c660f9c1ef82f403e0.jpg" alt="Night trail meetup">
+        <p><strong>Night Ride @ Helderberg</strong><br>Fully lit convoy across rugged terrain under the stars.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Torque Talk | Contact: torque@gearheadcollective.com
+  </div>
+
+</body>
+</html>
