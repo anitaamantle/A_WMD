@@ -38,6 +38,18 @@
       border-bottom: 2px solid #0099aa;
     }
 
+    .logo-title {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .logo {
+      height: 50px;
+      width: auto;
+    }
+
     header h1 {
       font-size: 2.5rem;
       color: #00b3cc;
@@ -238,7 +250,10 @@
 
 <body>
   <header>
-    <h1>Gearhead Collective</h1>
+    <div class="logo-title">
+      <img src="media/gearheadcollective.png" alt="Gearhead Collective Logo" class="logo" />
+      <h1>Gearhead Collective</h1>
+    </div>
   </header>
 
   <div class="topnav">
@@ -296,7 +311,6 @@
       </div>
     </div>
 
-
   <div class="footer">
     <p>📞 Contact Us: info@gearheadcollective.com | 📍 123 Car Street, Gaborone, Botswana</p>
   </div>
@@ -339,7 +353,6 @@
   </script>
 </body>
 </html>
-
 
 
 
