@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Torque Talk - 4x4 Builds</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Playfair+Display:wght@600&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #0d0d0d;
+      color: #ccc;
+      font-family: 'Orbitron', sans-serif;
+      line-height: 1.6;
+      text-align: center;
+    }
+
+    header {
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-bottom: 2px solid #0099aa;
+    }
+
+    header h1 {
+      color: #00b3cc;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      font-size: 2.5rem;
+      margin: 0;
+    }
+
+    .topnav {
+      background-color: #1f1f1f;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      border-bottom: 2px solid #0099aa;
+    }
+
+    .topnav a {
+      color: #00b3cc;
+      text-decoration: none;
+      font-weight: 600;
+      font-family: 'Orbitron', sans-serif;
+      padding: 10px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .topnav a:hover,
+    .topnav .active {
+      background-color: #004d59;
+    }
+
+    .content {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      text-align: left;
+    }
+
+    h1, h2 {
+      color: #00b3cc;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .build-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .build-item {
+      background-color: #1a1a1a;
+      border: 1px solid #00b3cc;
+      border-radius: 10px;
+      padding: 20px;
+      width: 280px;
+      box-shadow: 0 0 12px rgba(0, 179, 204, 0.2);
+      transition: transform 0.3s;
+    }
+
+    .build-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .build-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .build-item h3 {
+      color: #00b3cc;
+      margin-bottom: 10px;
+    }
+
+    .footer {
+      background: #1a1a1a;
+      padding: 20px;
+      text-align: center;
+      border-top: 2px solid #0099aa;
+      color: #777;
+      font-family: 'Orbitron', sans-serif;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .build-gallery {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .build-item {
+        width: 90%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Torque Talk | 4x4 Builds</h1>
+  </header>
+
+  <div class="topnav">
+    <a href="index.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="builds.html" class="active">4x4 Builds</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="content">
+    <h2>Build Spotlight</h2>
+    <p>Showcasing some of the most rugged and powerful 4x4 builds from our community. From lifted suspensions to extreme off-road gear, get inspired and share your own project.</p>
+
+    <div class="build-gallery">
+      <div class="build-item">
+        <img src="https://images.unsplash.com/photo-1618081460085-48a15d35e8df" alt="Ford Raptor Build">
+        <h3>Ford Raptor V8 Beast</h3>
+        <p>Fully kitted with King shocks, a suspension lift, off-road tires, and a heavy-duty winch for serious trails.</p>
+      </div>
+
+      <div class="build-item">
+        <img src="https://images.unsplash.com/photo-1598387842586-5d53c68d7c17" alt="Toyota Hilux 4x4">
+        <h3>Hilux Dakar Edition</h3>
+        <p>Custom skid plates, snorkel, and reinforced bumpers make this Hilux a true desert explorer.</p>
+      </div>
+
+      <div class="build-item">
+        <img src="https://images.unsplash.com/photo-1562171885-e9c2b2f5b50b" alt="Jeep Wrangler Build">
+        <h3>Wrangler Rock Crawler</h3>
+        <p>35-inch tires, roof rack, LED light bar, and a rear-mounted spare—built for mountain trails and crawling.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Torque Talk | Contact: torque@gearheadcollective.com
+  </div>
+</body>
+</html>
